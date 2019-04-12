@@ -25,13 +25,13 @@ io.on("conecction", socket => {
     })
 })
 
-mongoose.connect(env.urlConnection,
+mongoose.connect('mongodb+srv://djlucasfogaca:12941916@cluster0-paomm.mongodb.net/dj?retryWrites=true',
     {
         useNewUrlParser: true
     }
 );
 //middleware do socket.io 
-app.use((resq, res, next) => {
+app.use((req, res, next) => {
     req.io = io;
     return next();
 });
