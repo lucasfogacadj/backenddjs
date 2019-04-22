@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const path = require("path");
 
 //importar CORS
-const cors = require("cors");
+const cors = require('cors');
 
 const app = express();
 //define o cors
@@ -16,7 +16,7 @@ const env = require('../.env')
 
 //importar o socket.io
 const server = require('http').Server(app);
-const io = require('socket.io')(server);
+const io = require('socket.io')(server, { origins: '*:*' });
 //inicia a aplicacao
 
 io.on("conecction", socket => {
